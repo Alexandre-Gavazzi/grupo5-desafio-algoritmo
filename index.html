@@ -8,20 +8,30 @@
     </title>
 </head>
 <body>
-    Insira seu nome:
-    <input id="inp_nome" type="text" placeholder="nome....">
+    Insira seu nome:<br>
+    <input id="inp_nome" type="text" placeholder="nome...."><br>
 
-    Insira seu numero da sorte:
-    <input id="inp_num" type="text" placeholder="Numero">
+    Insira seu numero inteiro da sorte entre 1 e 10:<br>
+    <input id="inp_num" type="text" placeholder="Numero"><br>
 
     <button onclick="bt_cal()">Sortear</button>
 </body> 
 </html>
 <script>
-    Function bt_cal(){
+    function bt_cal(){
 
-        
+        var numerosorte = Number(np_num.value);
+        var sorteio = Math.random();
+
+        if (inp_num<0 && inp_num>10){
+            alert("Número inválido, por favor escolha um número inteiro de 1 a 10");
+        }       
+
+
+
     }
+
+
 
 
 
