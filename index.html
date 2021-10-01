@@ -15,20 +15,26 @@
     <input id="inp_num" type="text" placeholder="Numero"><br>
 
     <button onclick="bt_cal()">Sortear</button>
+
+    <div id='msg_parabens'></div>
 </body> 
 </html>
 <script>
-    function bt_cal(){
+    var qtd_sorteios= 0;
 
-        var numerosorte = Number(np_num.value);
+    function bt_cal(){
+    qtd_sorteios++;
+        var numerosorte = Number(inp_num.value);
         var sorteio = Math.random();
 
         if (inp_num<0 && inp_num>10){
             alert("Número inválido, por favor escolha um número inteiro de 1 a 10");
         }       
 
-
-
+else{
+    
+    msg_parabens.innerHTML=`Parabéns,${inp_nome.value}você foi sorteado(a) após ${qtd_sorteios}sorteios!`
+}
     }
 
 
