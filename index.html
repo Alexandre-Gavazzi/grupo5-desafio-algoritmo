@@ -25,16 +25,22 @@
     function bt_cal(){
     qtd_sorteios++;
         var numerosorte = Number(inp_num.value);
-        var sorteio = Math.random() * 9;
-        msg_parabens.innerHTML +=`${sorteio.toFixed()}<br>`;
-        //if (numerosorte>0 && numerosorte<=10){
-          //  msg_parabens.innerHTML=`Parabéns, ${inp_nome.value} você foi sorteado(a) após ${qtd_sorteios} sorteios!<br> `
-        //}       
+        var sorteio = (Math.random() * 9).toFixed();
 
-       // else{
-         //   alert("Número inválido, por favor escolha um número inteiro de 1 a 10");
+        
+        if (numerosorte>0 && numerosorte<=10){
+            if(sorteio == numerosorte){
+                msg_parabens.innerHTML=`Parabéns, ${inp_nome.value} você foi sorteado(a) após ${qtd_sorteios} sorteios!<br> ${sorteio}`
+            }
+            else{
+                msg_parabens.innerHTML = `Numero sorteado: ${sorteio}, Diferente do seu :/`;
+            }
+        }       
+
+        else{
+            alert("Número inválido, por favor escolha um número inteiro de 1 a 10");
             
-        //}
+        }
     }
 
 
